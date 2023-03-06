@@ -112,7 +112,7 @@ list1
 list_data <- list(c("jan","Feb","Nov"), matrix(c(3,9,5,1,-2,8), nrow=2),list("green",12.3))
 list_data 
 
-# Gvie names to the elements in the list
+# Give names to the elements in the list
 
 
 # in order to give the names to the elements we use name function
