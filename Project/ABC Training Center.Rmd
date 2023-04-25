@@ -1,0 +1,78 @@
+---
+title: "ABC Training Center"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: column
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+```
+
+
+```{r setup, include=FALSE}
+library("flexdashboard")
+library("tidyverse")
+library("ggplot2")
+library("dplyr")
+library("sqldf")
+library("readxl")
+```
+
+Column {data-width=200}
+-----------------------------------------------------------------------
+
+### Number Of Participants Month wise 
+
+```{r }
+Q2=read_excel("F:/Documents/Problem_solving/SV/SV_R_Programming/Project/ABC.xlsx")
+#a=sqldf("select Date,sum(Participants) as  Participants from Q2 group by Date")
+#Q2
+ggplot(Q2)+geom_bar(aes(x=months(Date),fill=months(Date)))
+```
+
+
+-----------------------------------------------------------------------
+
+### Course Wise Number Of Participants
+
+```{r}
+Q2=read_excel("F:/Documents/Problem_solving/SV/SV_R_Programming/Project/ABC.xlsx")
+a=sqldf("select Name from Q2
+where Name in('2D Animation','Access','Autodesk','MS Excel','Photoshop','PowerPoint','Presentation','Eng Grammar','Eng Speaking','Eng Writing')")
+#a
+ggplot(a)+geom_bar(aes(y=Name,fill=Name))
+```
+
+Column {data-width=200}
+-----------------------------------------------------------------------
+
+### Training Revenue Type Wise
+
+```{r}
+Q2=read_excel("F:/Documents/Problem_solving/SV/SV_R_Programming/Project/ABC.xlsx")
+a=sqldf("select Training_Type,sum(Revenue) as Revenue from Q2 group by Training_Type")
+#a
+ggplot(a,aes(x=" ",y=Revenue,fill=Training_Type))+geom_col(color="black")+coord_polar(theta="y")
+```
+Column {data-width=200}
+-----------------------------------------------------------------------
+
+### Revenue Of 10 Different Technology
+```{r}
+Q2=read_excel("F:/Documents/Problem_solving/SV/SV_R_Programming/Project/ABC.xlsx")
+a=sqldf("select Name,sum(Revenue) as Revenue from Q2
+where Name in('2D Animation','Access','Autodesk','MS Excel','Photoshop','PowerPoint','Presentation','Eng Grammar','Eng Speaking','Eng Writing') group by Name")
+#a
+ggplot(a,aes(x="",y=Revenue,fill=Name))+geom_col(color="black")+coord_polar(theta="y")
+```
+Column {data-width=200}
+-----------------------------------------------------------------------
+
+### Training Type Wise Number Of Students
+```{r}
+Q2=read_excel("F:/Documents/Problem_solving/SV/SV_R_Programming/Project/ABC.xlsx")
+a=sqldf("select Training_Type,count(Training_Type) as Revenue from Q2 group by Training_Type")
+#a
+ggplot(Q2)+geom_bar(aes(x=Training_Type,fill=Training_Type))
+```

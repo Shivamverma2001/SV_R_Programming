@@ -1,0 +1,22 @@
+install.packages("sqldf")
+install.packages("flexdashboard")
+library(sqldf)
+getwd()
+#setwd("F:\SEM -06\INT 232\files")
+students = read.csv("F:/Documents/Problem_solving/SV/SV_R_Programming/students.csv",header = TRUE)
+students
+
+sqldf("select min(marks) from students")
+sqldf("select count(*) from students")
+
+sqldf("select * from students where Roll_no > 3")
+max(students$Marks)
+min(students$Marks)
+sum(students$Marks)
+nrow(students)
+ncol(students)
+nrow(students[students$Marks > 24 , ])
+nrow(students[students$Marks < 11 , ])
+
+
+sqldf("select Roll_no,Marks from students where Marks > 20")
