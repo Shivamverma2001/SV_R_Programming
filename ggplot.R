@@ -48,7 +48,7 @@ ggplot(df,aes(x=hsize,y=value,fill=group))+geom_col()+coord_polar(theta = "y")+x
 library(ggplot2)
 library(reshape2)
 getwd()
-df <- read.csv("F:/Documents/Problem_solving/SV/SV_R_Programming/Project/bestsellers1.csv")
+df <- read.csv("F:/Documents/Problem_solving/SV/SV_R_Programming/bestsellers1.csv")
 #cor() will calculate correlation coefficient
 data <- cor(df[sapply(df,is.numeric)])
 data

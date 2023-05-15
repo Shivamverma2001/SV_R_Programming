@@ -4,7 +4,7 @@ emp.data<-data.frame(
   emp_name=c("rick","dan","michelle","ryan","gary"),
   salary=c(312.32,452.3,546.1,561.2,256.2),
   start_date=as.Date(c("2012-01-01","2013-09-03","2022-02-05","2013-09-03","2022-02-05")),
-  stringsAsFactors = FALSE
+  stringsAsFactors = TRUE
 )#emp.data is not a reference it's only name
 #print the data frame
 print(emp.data)

@@ -22,13 +22,11 @@ sqldf("select city,profit from Q2 where City like 'He%' ")
 sqldf("select city,profit from Q2 where City like '%H' ")
 sqldf("select city,profit from Q2 where City like '%H%' ")
 sqldf("select city,profit from Q2 where City like '_H%' ")
-
 #aggregrate functions
 sqldf("select sum(Profit) as 'Total_Profit' from Q2 ")
 sqldf("select min(Profit) as 'Min_Profit'from Q2 ")
 sqldf("select max(Profit) as 'Max_Profit' from Q2 ")
 sqldf("select count(Profit) as 'Number_of_records' from Q2 ")
-
 #Nested select
 a<<-sqldf("select max(profit) from Q2")
 a
@@ -46,13 +44,11 @@ a
 head(a,n=10)
 tail(a,n=10)
 sqldf("select distinct Segment from Q2 ")
-
 b=sqldf("select Segment, profit from Q2 order by profit")
 head(b)
 Q2=read_excel("F:/Documents/Problem_solving/SV/SV_R_Programming/Project/ABC.xlsx")
 a=sqldf("select Training_Type,sum(Revenue) as Revenue from Q2 ")
 a
-
 #group by
 sqldf("Select sum(Sales) from Q2")
 sqldf("Select region, sum(sales) as Total_Sale from Q2 where region in ('Central','West') group by region")

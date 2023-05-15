@@ -20,7 +20,7 @@ if("Truth" %in%x){
 x
 #switch
 x<-switch(
-  4,
+  3,
   "First",
   "second",
   "hi",

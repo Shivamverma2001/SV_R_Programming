@@ -16,14 +16,10 @@ print(e)
 
 x = 3.8 :8.9
 print(x)
-
 a = seq(4,7, length.out=6)
 print(a)
-
-
 b = seq(10,15, by = 0.5)
 print(b)
-
 a = c("Hll", "W", 1 , 'o')
 print(a)
 a = c(10,20,30,40,50)
@@ -34,10 +30,8 @@ print(a[c(-1,-3)])
 print(a[c(2,3,5)])
 a= NULL
 print (a)
-
 x <- 1:7
 x
-
 y <- 2 : -2
 y
 x = seq(0,10, by =2)
@@ -179,28 +173,19 @@ v1
 
 v2 <- unlist(list2)
 v2
-
-
 #Now add the vectors
 result <-  v1+v2
 print(result)
-
 #==================================================================================================
-
 # Factors
 # factors are used to categories the data
-
 data <- c("East","West","East","North","North","East","West","West","West","East","North")
 is.factor(data)
-
 # Create the factors
-
 factor_data <- factor(data)
 nlevels(factor_data)
 print(factor_data)
 print(is.factor(factor_data))
-
 # Apply the factor function with requires order of the level
-
 new_order_data <- factor(factor_data, levels = c("East", "West","North"))
 print(new_order_data)

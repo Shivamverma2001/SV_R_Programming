@@ -50,16 +50,6 @@ library(wordcloud)
 wordcloud(sms_corpus_clean,
           min.freq = 50,
           random.order = FALSE)
-
-
-
-
-
-
-
-
-
-
 sms_freq_words<-findFreqTerms(sms_dtm_train, 5)
 sms_freq_words #words that are used in atleast 5 SMS
 sms_dtm_freq_train<- sms_dtm_train[ ,
